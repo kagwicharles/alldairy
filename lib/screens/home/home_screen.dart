@@ -24,7 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         actions: [
           IconButton(
               onPressed: () {},
@@ -43,25 +46,36 @@ class _HomeScreenState extends State<HomeScreen> {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
+        indicatorColor: Colors.green,
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
+            selectedIcon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
             icon: Icon(Icons.home_outlined),
             label: 'Home',
           ),
           NavigationDestination(
+            selectedIcon: Icon(
+              Icons.message,
+              color: Colors.white,
+            ),
             icon: Badge(
               label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
+              child: Icon(Icons.message_outlined),
             ),
             label: 'Forums',
           ),
           NavigationDestination(
+            selectedIcon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
             icon: Badge(
               label: Text('2'),
-              child: Icon(Icons.person),
+              child: Icon(Icons.person_2_outlined),
             ),
             label: 'Account',
           ),
