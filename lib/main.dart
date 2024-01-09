@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
       ),
-      home: const HomeScreen(title: 'All Dairy'),
+      home: const HomeScreen(title: 'Hello, John'),
     );
   }
 }

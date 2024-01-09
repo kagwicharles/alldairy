@@ -13,20 +13,30 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
 
-  List<Widget> pages = [DashBoardSection(), Center(), Center(), Center()];
+  List<Widget> pages = [
+    DashBoardSection(),
+    const Center(),
+    const Center(),
+    const Center()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications))
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications,
+                size: 32,
+              ))
         ],
       ),
       body: pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.white,
         height: 64,
         onDestinationSelected: (int index) {
           setState(() {
@@ -42,10 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.book_rounded)),
-            label: 'Learn',
-          ),
-          NavigationDestination(
             icon: Badge(
               label: Text('2'),
               child: Icon(Icons.messenger_sharp),
@@ -57,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: Text('2'),
               child: Icon(Icons.person),
             ),
-            label: 'Profile',
+            label: 'Account',
           ),
         ],
       ),
